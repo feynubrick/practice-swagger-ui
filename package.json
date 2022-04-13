@@ -4,18 +4,27 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build": "bash ./build.sh",
     "start": "node app.js",
-    "dev": "npx nodemon app.js -e js,yml,json",
+    "prestart": "npm run build",
+    "dev": "npx nodemon -e js,yml,json,yaml --exec 'bash start.sh'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Seung-Yoon Oh",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.3",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-cli": "^4.0.4",
+    "swagger-ui-express": "^4.3.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
-  "type": "module"
+  "type": "module",
+  "nodemonConfig": {
+    "ignore": [
+      "./api-doc.yaml"
+    ]
+  }
 }
