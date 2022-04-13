@@ -18,4 +18,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "./schemas/Pet.yaml"
+                $ref: "#/components/schemas/Pet"
+
+components:
+  schemas:
+    $ref: "./schemas/_index.yaml"

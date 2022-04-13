@@ -5,7 +5,7 @@ import YAML from 'yamljs';
 const app = express();
 const port = 3000;
 
-const swaggerDoc = YAML.load('./api-doc.yaml');
+const swaggerDoc = YAML.load('./swagger/build/swagger.yaml');
 
 app.get('/', (req, res) => {
   res.send('OK');

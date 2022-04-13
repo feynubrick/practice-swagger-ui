@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "bash ./build.sh",
+    "build": "bash ./scripts/build.sh",
     "start": "node app.js",
     "prestart": "npm run build",
-    "dev": "npx nodemon -e js,yml,json,yaml --exec 'bash start.sh'",
+    "dev": "npx nodemon -e js,yml,json,yaml --exec 'bash ./scripts/start.sh'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Seung-Yoon Oh",
@@ -24,7 +24,7 @@
   "type": "module",
   "nodemonConfig": {
     "ignore": [
-      "./api-doc.yaml"
+      "./swagger/build/*.yaml"
     ]
   }
 }
